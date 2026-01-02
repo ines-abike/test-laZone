@@ -1,7 +1,15 @@
+import { Button, HStack } from "@chakra-ui/react";
 import { Box, Button } from "@chakra-ui/react";
 
-export default function Demo() {
+export default function Page() {
   return (
+    <HStack>
+      <Button>Click me</Button>
+      <Button>Click me</Button>
+    </HStack>
+  );
+};
+
     <div>
       <Button variant="solid" bg="secondary.500">
         Solid Button
