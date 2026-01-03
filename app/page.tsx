@@ -5,7 +5,6 @@ export default function Page() {
     <HStack>
       <Button>Good Morning</Button>
       <Button>Good Afternoon</Button>
-      <Button>Good Evening</Button>
     </HStack>
   );
 }
