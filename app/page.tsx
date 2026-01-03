@@ -3,8 +3,9 @@ import { Button, HStack } from "@chakra-ui/react";
 export default function Page() {
   return (
     <HStack>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
+      <Button>Good Morning</Button>
+      <Button>Good Afternoon</Button>
+      <Button>Good Evening</Button>
     </HStack>
   );
-};
+}
