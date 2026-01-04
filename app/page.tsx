@@ -1,12 +1,11 @@
-"use client";
+import Test from "@/components/Test";
 
-import { Button, HStack } from "@chakra-ui/react";
-
-export default function Page() {
+const page = () => {
   return (
-    <HStack>
-      <Button>Good Morning</Button>
-      <Button>Good Afternoon</Button>
-    </HStack>
+    <div>
+      <Test />
+    </div>
   );
-}
+};
+
+export default page;
