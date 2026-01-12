@@ -1,10 +1,11 @@
-import { Button, HStack } from "@chakra-ui/react"
+import Test from "@/components/Test";
 
-export default function Demo() {
+const page = () => {
   return (
-    <HStack>
-      <Button variant="solid" colorScheme="blue">Solid Button</Button>
-      <Button variant="outline" colorScheme="green">Outline Button</Button>
-    </HStack>
-  )
-}
+    <div>
+      <Test />
+    </div>
+  );
+};
+
+export default page;
