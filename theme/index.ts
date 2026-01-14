@@ -1,4 +1,5 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
+import { textStyles } from "./text-styles";
 
 const config = defineConfig({
   globalCss: {
@@ -44,11 +45,48 @@ const config = defineConfig({
         },
       },
     },
+    textStyles,
+
     semanticTokens: {
       colors: {
-        brand: {
-          title: { value: "{colors.primary.500}" },
-          subtitle: { value: "{colors.primary.100}" },
+        primary: {
+          solid: { value: "{colors.primary.500}" },
+          contrast: { value: "white" },
+          fg: { value: "{colors.primary.900}" },
+          subtle: { value: "{colors.primary.100}" },
+          muted: { value: "{colors.primary.100}" },
+        },
+
+        secondary: {
+          solid: { value: "{colors.secondary.500}" },
+          contrast: { value: "white" },
+          fg: { value: "{colors.secondary.900}" },
+          subtle: { value: "{colors.secondary.100}" },
+          muted: { value: "{colors.secondary.100}" },
+        },
+
+        success: {
+          solid: { value: "{colors.success.500}" },
+          contrast: { value: "white" },
+          fg: { value: "{colors.success.900}" },
+          subtle: { value: "{colors.success.100}" },
+          muted: { value: "{colors.success.100}" },
+        },
+
+        error: {
+          solid: { value: "{colors.error.500}" },
+          contrast: { value: "white" },
+          fg: { value: "{colors.error.900}" },
+          subtle: { value: "{colors.error.500}" },
+          muted: { value: "{colors.error.500}" },
+        },
+
+        warning: {
+          solid: { value: "{colors.warning.100}" },
+          contrast: { value: "white" },
+          fg: { value: "{colors.warning.100}" },
+          subtle: { value: "white" },
+          muted: { value: "{colors.warning.100}" },
         },
       },
     },

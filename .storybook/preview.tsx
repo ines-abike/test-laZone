@@ -1,20 +1,15 @@
-import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
-import { withThemeByClassName } from "@storybook/addon-themes";
+import { ChakraProvider } from "@chakra-ui/react";
 import type { Preview } from "@storybook/react";
+import { system } from "../theme/index";
 
 const preview: Preview = {
   // ...
   decorators: [
     (Story) => (
-      <ChakraProvider value={defaultSystem}>
+      <ChakraProvider value={system}>
         <Story />
       </ChakraProvider>
     ),
-
-    withThemeByClassName({
-      defaultTheme: "light",
-      themes: { light: "", dark: "dark" },
-    }),
   ],
 };
 
