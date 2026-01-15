@@ -1,39 +1,58 @@
-import { Meta } from "@storybook/addon-docs";
-import { Box, Text } from "@chakra-ui/react";
+import { Meta, Typeset } from "@storybook/addon-docs/blocks";
 
-<Meta title="Theme/Typography" />
+<Meta title="Typography" />
+
+export const typography = {
+  type: {
+    primary: 'Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif',
+  },
+  weight: {
+    regular: "400",
+    bold: "700",
+  },
+  size: {
+    micro: 12,
+    small: 14,
+    body: 17,
+    heading4: 22,
+    heading: 25,
+    heading3: 28,
+    heading2: 39,
+    heading1: 53,
+    huge: 69,
+  },
+  lineHeight: {
+    tight: "100%",
+    normal: "120%",
+    relaxed: "150%",
+    body: "28px",
+  },
+};
+
+export const SampleText =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 
 # Typography
 
-**Font family:** Roboto  
-**Weights:** 400 (Regular), 700 (Bold)
+**Font:** Roboto
 
----
+**Weights:** 400 (regular), 700 (bold)
 
 ## Headings
 
-<Text textStyle="heading">Heading</Text>
-<Text textStyle="huge">Huge</Text>
-
-<Text textStyle="heading.1">Heading 1</Text>
-<Text textStyle="heading.1.sub">Heading 1 Sub</Text>
-
-<Text textStyle="heading.2">Heading 2</Text>
-<Text textStyle="heading.2.sub">Heading 2 Sub</Text>
-
-<Text textStyle="heading.3">Heading 3</Text>
-<Text textStyle="heading.3.sub">Heading 3 Sub</Text>
-
-<Text textStyle="heading.4">Heading 4</Text>
-<Text textStyle="heading.4.sub">Heading 4 Sub</Text>
-
----
-
-## Body
-
-<Text textStyle="text.body">Body text</Text>
-<Text textStyle="text.bold">Body bold</Text>
-<Text textStyle="text.small">Small text</Text>
-<Text textStyle="text.small.bold">Small bold text</Text>
-<Text textStyle="text.micro">Micro text</Text>
-<Text textStyle="text.micro.bold">Micro bold text</Text>
+<Typeset
+  fontSizes={[
+    Number(typography.size.micro),
+    Number(typography.size.small),
+    Number(typography.size.body),
+    Number(typography.size.heading4),
+    Number(typography.size.heading),
+    Number(typography.size.heading3),
+    Number(typography.size.heading2),
+    Number(typography.size.heading1),
+    Number(typography.size.huge),
+  ]}
+  fontWeight={typography.weight.bold}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
