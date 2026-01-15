@@ -1,7 +1,7 @@
 import Button from "./Button";
 import type { StoryObj } from "@storybook/react";
 
-export default {
+const meta = {
   title: "UI/Button",
   component: Button,
   tags: ["autodocs"],
@@ -9,52 +9,45 @@ export default {
     variant: {
       control: "select",
       options: ["solid", "outline", "ghost"],
-      defaultValue: "solid",
     },
-    size: { control: "radio", options: ["sm", "md", "lg"], defaultValue: "md" },
+    size: {
+      control: "radio",
+      options: ["sm", "md", "lg"],
+    },
+    colorPalette: {
+      control: "select",
+      options: ["primary", "secondary", "success", "error", "warning"],
+    },
   },
 };
 
-const palettes = [
-  "primary",
-  "secondary",
-  "success",
-  "error",
-  "warning",
-] as const;
+export default meta;
 
-export const Primary = () => {
-  return (
-    <div style={{ display: "flex", gap: 12 }}>
-      {palettes.map((palette) => (
-        <Button key={palette} variant="solid" colorPalette={palette}>
-          {palette}
-        </Button>
-      ))}
-    </div>
-  );
+type Story = StoryObj<typeof Button>;
+
+export const Primary: Story = {
+  args: {
+    variant: "solid",
+    size: "md",
+    colorPalette: "primary",
+    children: "Button",
+  },
 };
 
-export const Secondary = () => {
-  return (
-    <div style={{ display: "flex", gap: 12 }}>
-      {palettes.map((palette) => (
-        <Button key={palette} variant="outline" colorPalette={palette}>
-          {palette}
-        </Button>
-      ))}
-    </div>
-  );
+export const Secondary: Story = {
+  args: {
+    variant: "outline",
+    size: "md",
+    colorPalette: "primary",
+    children: "Button",
+  },
 };
 
-export const Tertiary = () => {
-  return (
-    <div style={{ display: "flex", gap: 12 }}>
-      {palettes.map((palette) => (
-        <Button key={palette} variant="ghost" colorPalette={palette}>
-          {palette}
-        </Button>
-      ))}
-    </div>
-  );
+export const Tertiary: Story = {
+  args: {
+    variant: "ghost",
+    size: "md",
+    colorPalette: "primary",
+    children: "Button",
+  },
 };
