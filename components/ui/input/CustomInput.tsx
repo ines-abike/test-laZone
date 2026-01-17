@@ -14,7 +14,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
   ...inputProps
 }) => {
   return (
-    <Field.Root invalid={invalid} disabled={disabled}>
+    <Field.Root invalid={invalid}>
       <Input disabled={disabled} {...inputProps} />
     </Field.Root>
   );
