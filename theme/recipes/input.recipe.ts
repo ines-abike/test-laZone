@@ -24,7 +24,7 @@ export const inputRecipe = defineRecipe({
 
         _disabled: {
           bg: "gray.100",
-          borderColor: "red.500",
+          borderColor: "gray.900",
         },
       },
     },
