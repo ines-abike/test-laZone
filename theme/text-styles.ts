@@ -181,7 +181,7 @@ export const textStyles = defineTextStyles({
     description: "Micro bold text",
     value: {
       fontFamily: "Roboto",
-      fontWeight: "400",
+      fontWeight: "700",
       fontSize: "12px",
       lineHeight: "150%",
       letterSpacing: "0%",

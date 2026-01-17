@@ -1,5 +1,6 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 import { textStyles } from "./text-styles";
+import { buttonRecipe } from "./recipes/button.recipe";
 import { inputRecipe } from "./recipes/input.recipe";
 
 const config = defineConfig({
@@ -89,6 +90,14 @@ const config = defineConfig({
   },
 });
 
+const buttonConfig = defineConfig({
+  theme: {
+    recipes: {
+      button: buttonRecipe,
+    },
+  },
+});
+
 const inputConfig = defineConfig({
   theme: {
     recipes: {
@@ -97,4 +106,9 @@ const inputConfig = defineConfig({
   },
 });
 
-export const system = createSystem(defaultConfig, config, inputConfig);
+export const system = createSystem(
+  defaultConfig,
+  config,
+  buttonConfig,
+  inputConfig
+);
