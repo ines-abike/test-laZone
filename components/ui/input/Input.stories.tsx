@@ -1,40 +1,24 @@
-import Input from "./Input";
-import type { StoryObj } from "@storybook/react";
+// components/CustomInput/CustomInput.stories.tsx
+import type { Meta, StoryObj } from "@storybook/react";
+import CustomInput from "./CustomInput";
 
-const meta = {
-  title: "UI/Input",
-  component: Input,
+const meta: Meta<typeof CustomInput> = {
+  title: "UI/CustomInput",
+  component: CustomInput,
   tags: ["autodocs"],
   argTypes: {
-    variant: {
-      control: "select",
-      options: ["outline", "filled", "flushed", "unstyled"],
-    },
-    size: {
-      control: "radio",
-      options: ["2xs","xs","sm","md","lg","xl","2xl"],
-    },
+    disabled: { control: "boolean" },
+    invalid: { control: "boolean" },
   },
 };
 
 export default meta;
+type Story = StoryObj<typeof CustomInput>;
 
-type Story = StoryObj<typeof Input>;
-
-export const Primary: Story = {
+export const Playground: Story = {
   args: {
-    variant: "outline",
-    color: "primary",
-    size:"lg",
-    placeholder: "Enter your text",
+    placeholder: "email@example.com",
+    disabled: false,
+    invalid: false,
   },
-};
-
-export const Secondary: Story = {
-  args: {
-    variant: "subtle",
-    color: "secondary",
-    size:"lg",
-    placeholder: "Enter your text",
-    },
 };
