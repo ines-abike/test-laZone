@@ -56,6 +56,7 @@ const config = defineConfig({
           contrast: { value: "white" },
           fg: { value: "{colors.primary.900}" },
           muted: { value: "{colors.primary.100}" },
+          subtle: { value: "{colors.primary.100}" },
         },
 
         secondary: {
@@ -63,6 +64,7 @@ const config = defineConfig({
           contrast: { value: "white" },
           fg: { value: "{colors.secondary.900}" },
           muted: { value: "{colors.secondary.100}" },
+          subtle: { value: "{colors.secondary.100}" },
         },
 
         success: {
@@ -70,6 +72,7 @@ const config = defineConfig({
           contrast: { value: "white" },
           fg: { value: "{colors.success.900}" },
           muted: { value: "{colors.success.100}" },
+          subtle: { value: "{colors.success.100}" },
         },
 
         error: {
@@ -77,6 +80,7 @@ const config = defineConfig({
           contrast: { value: "white" },
           fg: { value: "{colors.error.900}" },
           muted: { value: "{colors.error.500}" },
+          subtle: { value: "{colors.error.500}" },
         },
 
         warning: {
@@ -84,6 +88,7 @@ const config = defineConfig({
           contrast: { value: "white" },
           fg: { value: "{colors.warning.100}" },
           muted: { value: "{colors.warning.100}" },
+          subtle: { value: "{colors.warning.100}" },
         },
       },
     },
@@ -112,3 +117,5 @@ export const system = createSystem(
   buttonConfig,
   inputConfig
 );
+
+export default system;

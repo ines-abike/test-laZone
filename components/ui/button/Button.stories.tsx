@@ -8,15 +8,11 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["solid", "outline", "ghost"],
-    },
-    size: {
-      control: "radio",
-      options: ["sm", "md", "lg"],
+      options: ["primary", "secondary", "tertiary"],
     },
     colorPalette: {
       control: "select",
-      options: ["primary", "secondary", "success", "error", "warning"],
+      options: ["primary", "secondary", "success"],
     },
     disabled: {
       control: "boolean",
@@ -32,27 +28,24 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    variant: "solid",
+    variant: "primary",
     colorPalette: "primary",
-    size: "md",
     children: "Button",
   },
 };
 
-export const Outline: Story = {
+export const Secondary: Story = {
   args: {
-    variant: "outline",
+    variant: "secondary",
     colorPalette: "primary",
-    size: "md",
     children: "Button",
   },
 };
 
-export const Ghost: Story = {
+export const Tertiary: Story = {
   args: {
-    variant: "ghost",
+    variant: "tertiary",
     colorPalette: "primary",
-    size: "md",
     children: "Button",
   },
 };

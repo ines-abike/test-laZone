@@ -23,15 +23,6 @@ const colors = {
     500: { value: "#9BCC17" },
     900: { value: "#7FA713" },
   },
-
-  error: {
-    500: { value: "#FF8D94" },
-    900: { value: "#E52B36" },
-  },
-
-  warning: {
-    100: { value: "#F3C66D" },
-  },
 };
 
 export default colors;

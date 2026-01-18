@@ -6,9 +6,8 @@ export const buttonRecipe = defineRecipe({
     fontWeight: "medium",
     borderRadius: "md",
     cursor: "pointer",
-    transition: "all 0.2s",
+    transition: "all 0.1s",
 
-    // État disabled (appliqué à toutes les variants)
     _disabled: {
       opacity: 0.4,
       cursor: "not-allowed",
@@ -18,14 +17,12 @@ export const buttonRecipe = defineRecipe({
 
   variants: {
     variant: {
-      solid: {
+      primary: {
         bg: "colorPalette.fg",
         color: "white",
 
         _hover: {
           bg: "colorPalette.solid",
-          transform: "translateY(-1px)",
-          boxShadow: "md",
         },
 
         _disabled: {
@@ -34,7 +31,7 @@ export const buttonRecipe = defineRecipe({
         },
       },
 
-      outline: {
+      secondary: {
         border: "2px solid",
         borderColor: "colorPalette.fg",
         color: "colorPalette.fg",
@@ -52,7 +49,7 @@ export const buttonRecipe = defineRecipe({
         },
       },
 
-      ghost: {
+      tertiary: {
         bg: "transparent",
         color: "colorPalette.fg",
 
@@ -69,6 +66,6 @@ export const buttonRecipe = defineRecipe({
   },
 
   defaultVariants: {
-    variant: "solid",
+    variant: "primary",
   },
 });
