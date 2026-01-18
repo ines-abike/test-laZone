@@ -1,11 +1,17 @@
 import Test from "@/components/Test";
 
-const Page = () => {
+const Demo = () => {
   return (
     <div>
-      <Test />
+      <Button variant="solid" bg="secondary.500">
+        Solid Button
+      </Button>
+      <Button bg="error.500">Outline Button</Button>
+      <Box color="brand.title" fontSize="2xl">
+        Hello world
+      </Box>
     </div>
   );
 };
 
-export default Page;
+export default Demo;
