@@ -1,0 +1,67 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
+import colors from "./styles";
+
+<Meta title="Theme/colors" />
+
+<ColorPalette>
+  <ColorItem
+    title="theme.color.primary"
+    subtitle="Some of the purple"
+    colors={{
+      100: colors.primary[100].value,
+      500: colors.primary[500].value,
+      900: colors.primary[900].value,
+    }}
+  />
+
+<ColorItem
+  title="theme.color.secondary"
+  subtitle="Some of the purple"
+  colors={{
+    100: colors.secondary[100].value,
+    500: colors.secondary[500].value,
+    900: colors.secondary[900].value,
+  }}
+/>
+
+<ColorItem
+  title="theme.color.gray"
+  subtitle="Some of the gray"
+  colors={{
+    50: colors.gray[50].value,
+    200: colors.gray[200].value,
+    500: colors.gray[500].value,
+    900: colors.gray[900].value,
+  }}
+/>
+
+    <ColorItem
+    title="theme.color.success"
+    subtitle="Some of the green"
+    colors={{
+      100: colors.success[100].value,
+      500: colors.success[500].value,
+      900: colors.success[900].value,
+    }}
+
+/>
+
+    <ColorItem
+    title="theme.color.error"
+    subtitle="Some of the red"
+    colors={{
+      500: colors.error[500].value,
+      900: colors.error[900].value,
+    }}
+
+/>
+
+<ColorItem
+  title="theme.color.warning"
+  subtitle="Some of the orange"
+  colors={{
+    100: colors.warning[100].value,
+  }}
+/>
+
+</ColorPalette>
