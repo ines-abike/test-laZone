@@ -1,0 +1,80 @@
+import CustomInput from "@/components/ui/input/CustomInput";
+import SideDecoration from "@/components/ui/SideDecoration";
+import {
+  Box,
+  Container,
+  Flex,
+  Grid,
+  Image,
+  Text,
+  Button,
+  Field,
+  Link,
+} from "@chakra-ui/react";
+
+const SignIn = () => {
+  return (
+    <Container maxW="full" p={0}>
+      <Grid templateColumns={{ base: "1fr", lg: "2fr 1fr" }} minH="100vh">
+        <Flex align="center" justify="center" px="30px">
+          <Box w="full" maxW="447px">
+            <Flex direction="column" gap="24px">
+              <Image
+                w={{ base: "200px", lg: "300px", md: "250px" }}
+                h={{ base: "40px", lg: "50px", md: "45px" }}
+                src="/logo.svg"
+                alt="logo"
+              />
+
+              <Box>
+                <Text textStyle="heading.3">Connectez-vous</Text>
+                <Text textStyle="text.small" color="gray.700">
+                  Accédez à votre compte
+                </Text>
+              </Box>
+
+              <Box as="form">
+                <Flex direction="column" gap="16px">
+                  <Field.Root>
+                    <Field.Label>Email</Field.Label>
+                    <CustomInput type="email" placeholder="johndoe@mail.com" />
+                  </Field.Root>
+
+                  <Field.Root>
+                    <Field.Label>Mot de passe</Field.Label>
+                    <CustomInput
+                      type="password"
+                      placeholder="Votre mot de passe"
+                    />
+                    <Link
+                      as="a"
+                      href="/forgot-password"
+                      textStyle="text.micro"
+                      color="gray.700"
+                      alignSelf="flex-end"
+                      mt="4px"
+                    >
+                      Mot de passe oublié ?
+                    </Link>
+                  </Field.Root>
+
+                  <Button
+                    type="submit"
+                    bg="primary.900"
+                    color="white"
+                    _hover={{ opacity: 0.9 }}
+                  >
+                    Connexion
+                  </Button>
+                </Flex>
+              </Box>
+            </Flex>
+          </Box>
+        </Flex>
+        <SideDecoration />
+      </Grid>
+    </Container>
+  );
+};
+
+export default SignIn;
