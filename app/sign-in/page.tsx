@@ -26,32 +26,32 @@ const SignIn = () => {
                 alt="logo"
               />
 
-              <Box>
+              <Flex direction="column" gap="2px">
                 <Text textStyle="heading.3">Connectez-vous</Text>
                 <Text textStyle="text.small" color="gray.700">
                   Accédez à votre compte
                 </Text>
-              </Box>
+              </Flex>
 
               <Box as="form">
                 <Flex direction="column" gap="16px">
                   <Field.Root>
-                    <Field.Label>Email</Field.Label>
+                    <Field.Label textStyle="text.body">Email</Field.Label>
                     <CustomInput type="email" placeholder="johndoe@mail.com" />
                   </Field.Root>
 
                   <Field.Root>
-                    <Field.Label>Mot de passe</Field.Label>
+                    <Field.Label textStyle="text.body">
+                      Mot de passe
+                    </Field.Label>
                     <CustomInput
                       type="password"
                       placeholder="Votre mot de passe"
                     />
                     <Link
-                      as="a"
-                      href="/forgot-password"
+                      href="/reset-password"
                       textStyle="text.micro"
                       color="gray.700"
-                      alignSelf="flex-end"
                       mt="4px"
                     >
                       Mot de passe oublié ?
