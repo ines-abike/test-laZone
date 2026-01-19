@@ -65,7 +65,7 @@ const SignUp = () => {
                     <CustomInput type="password" />
                   </Field.Root>
 
-                  <Button type="submit">S&apos;enregistrer</Button>
+                  <Button bg="primary.900">S&apos;enregistrer</Button>
                 </Flex>
               </Box>
             </Flex>

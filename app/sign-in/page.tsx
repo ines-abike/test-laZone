@@ -58,14 +58,7 @@ const SignIn = () => {
                     </Link>
                   </Field.Root>
 
-                  <Button
-                    type="submit"
-                    bg="primary.900"
-                    color="white"
-                    _hover={{ opacity: 0.9 }}
-                  >
-                    Connexion
-                  </Button>
+                  <Button bg="primary.900">Connexion</Button>
                 </Flex>
               </Box>
             </Flex>
