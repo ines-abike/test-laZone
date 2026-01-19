@@ -9,14 +9,13 @@ import {
   Text,
   Button,
   Field,
-  Link,
 } from "@chakra-ui/react";
 
-const SignIn = () => {
+const SignUp = () => {
   return (
     <Container maxW="full" p={0}>
       <Grid templateColumns={{ base: "1fr", lg: "2fr 1fr" }} minH="100vh">
-        <Flex align="center" justify="center" px="30px">
+        <Flex align="center" justify="center" px="30px" py="80px">
           <Box w="full" maxW="447px">
             <Flex direction="column" gap="24px">
               <Image
@@ -27,14 +26,26 @@ const SignIn = () => {
               />
 
               <Flex direction="column" gap="2px">
-                <Text textStyle="heading.3">Connectez-vous</Text>
+                <Text textStyle="heading.3">Inscrivez-vous</Text>
                 <Text textStyle="text.small" color="gray.700">
-                  Accédez à votre compte
+                  Créez votre compte
                 </Text>
               </Flex>
 
               <Box as="form">
                 <Flex direction="column" gap="16px">
+                  <Flex direction="row" gap="16px">
+                    <Field.Root>
+                      <Field.Label textStyle="text.body">Nom</Field.Label>
+                      <CustomInput placeholder="Doe" />
+                    </Field.Root>
+
+                    <Field.Root>
+                      <Field.Label textStyle="text.body">Prénom</Field.Label>
+                      <CustomInput placeholder="John" />
+                    </Field.Root>
+                  </Flex>
+
                   <Field.Root>
                     <Field.Label textStyle="text.body">Email</Field.Label>
                     <CustomInput type="email" placeholder="johndoe@mail.com" />
@@ -44,28 +55,17 @@ const SignIn = () => {
                     <Field.Label textStyle="text.body">
                       Mot de passe
                     </Field.Label>
-                    <CustomInput
-                      type="password"
-                      placeholder="Votre mot de passe"
-                    />
-                    <Link
-                      href="/reset-password"
-                      textStyle="text.micro"
-                      color="gray.700"
-                      mt="4px"
-                    >
-                      Mot de passe oublié ?
-                    </Link>
+                    <CustomInput type="password" />
                   </Field.Root>
 
-                  <Button
-                    type="submit"
-                    bg="primary.900"
-                    color="white"
-                    _hover={{ opacity: 0.9 }}
-                  >
-                    Connexion
-                  </Button>
+                  <Field.Root>
+                    <Field.Label textStyle="text.body">
+                      Répéter le mot de passe
+                    </Field.Label>
+                    <CustomInput type="password" />
+                  </Field.Root>
+
+                  <Button type="submit">S&apos;enregistrer</Button>
                 </Flex>
               </Box>
             </Flex>
@@ -77,4 +77,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
