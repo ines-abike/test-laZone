@@ -1,19 +1,16 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import {
   Box,
-  Button,
   Container,
   Flex,
   Grid,
   Image,
+  Link,
   Text,
 } from "@chakra-ui/react";
 
 const NotFound = () => {
-  const router = useRouter();
-
   return (
     <Container maxW="full" p={0} bg="primary.900">
       <Grid templateColumns={{ base: "1fr", lg: "2fr 1fr" }} minH="100vh">
@@ -37,15 +34,14 @@ const NotFound = () => {
                 la page d&apos;accueil où vous pourrez certainement retrouver
                 votre chemin.
               </Text>
-              <Button
+              <Link
                 bg="white"
                 color="primary.900"
                 w="50%"
                 textStyle="text.body.bold"
-                onClick={() => router.push("/")}
               >
-                Retour à l&apos;accueil
-              </Button>
+                Retour à la page d&apos;accueil
+              </Link>
             </Flex>
           </Box>
         </Flex>
