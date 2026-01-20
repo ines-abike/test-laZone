@@ -6,7 +6,7 @@ export const buttonRecipe = defineRecipe({
     fontWeight: "medium",
     borderRadius: "md",
     cursor: "pointer",
-    transition: "all 0.1s",
+    transition: "all 0.5s",
 
     _disabled: {
       opacity: 0.4,

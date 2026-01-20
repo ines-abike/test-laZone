@@ -8,7 +8,7 @@ import {
   Image,
   Text,
   Button,
-  Field,
+  Heading,
 } from "@chakra-ui/react";
 
 const ResetPassword = () => {
@@ -26,7 +26,7 @@ const ResetPassword = () => {
               />
 
               <Flex direction="column" gap="2px">
-                <Text textStyle="heading.3">Connectez-vous</Text>
+                <Heading textStyle="heading.3">Connectez-vous</Heading>
                 <Text textStyle="text.small" color="gray.700">
                   Accédez à votre compte
                 </Text>
@@ -34,21 +34,20 @@ const ResetPassword = () => {
 
               <Box as="form">
                 <Flex direction="column" gap="16px">
-                  <Field.Root>
-                    <Field.Label textStyle="text.body">
-                      Nouveau mot de passe
-                    </Field.Label>
-                    <CustomInput type="password" />
-                  </Field.Root>
-
-                  <Field.Root>
-                    <Field.Label textStyle="text.body">
-                      Confirmer votre nouveau mot de passe
-                    </Field.Label>
-                    <CustomInput type="password" />
-                  </Field.Root>
-
-                  <Button bg="primary.900">Connexion</Button>
+                  <CustomInput
+                    type="password"
+                    label="Nouveau mot de passe"
+                    textStyle="text.body"
+                    placeholder="------"
+                  />
+                  <CustomInput
+                    type="password"
+                    label="Confirmer votre nouveau mot de passe"
+                    placeholder="------"
+                  />
+                  <Button variant="primary" colorPalette="primary">
+                    Connexion
+                  </Button>
                 </Flex>
               </Box>
             </Flex>
