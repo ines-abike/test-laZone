@@ -1,14 +1,7 @@
 "use client";
 
-import {
-  Box,
-  Container,
-  Flex,
-  Grid,
-  Image,
-  Link,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Container, Flex, Grid, Image, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 const NotFound = () => {
   return (
@@ -34,14 +27,15 @@ const NotFound = () => {
                 la page d&apos;accueil où vous pourrez certainement retrouver
                 votre chemin.
               </Text>
-              <Link
+
+              <Text
                 bg="white"
                 color="primary.900"
                 w="50%"
                 textStyle="text.body.bold"
               >
-                Retour à la page d&apos;accueil
-              </Link>
+                <Link href="/">Mot de passe oublié ?</Link>
+              </Text>
             </Flex>
           </Box>
         </Flex>
