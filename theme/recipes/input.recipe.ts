@@ -1,14 +1,6 @@
 import { defineRecipe } from "@chakra-ui/react";
 
 export const inputRecipe = defineRecipe({
-  className: "custom-input",
-
-  base: {
-    fontWeight: "medium",
-    borderRadius: "md",
-    borderWidth: "1px",
-  },
-
   variants: {
     variant: {
       outline: {
@@ -16,6 +8,9 @@ export const inputRecipe = defineRecipe({
         borderColor: "gray.500",
         _focus: {
           borderColor: "secondary.500",
+        },
+        _hover: {
+          bg: "secondary.100/5",
         },
 
         _invalid: {
@@ -26,6 +21,7 @@ export const inputRecipe = defineRecipe({
           bg: "gray.100",
           borderColor: "gray.900",
         },
+        transition: "all 0.2s",
       },
     },
   },
