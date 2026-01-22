@@ -41,8 +41,8 @@ const SignUp = () => {
       confirmPassword: "",
     },
     validationSchema,
-    onSubmit: (values) => {
-      console.log("onSubmit", values);
+    onSubmit: () => {
+      alert("Votre compte a été créer avec succès !");
     },
   });
 

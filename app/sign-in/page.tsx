@@ -30,8 +30,8 @@ const SignIn = () => {
       password: "",
     },
     validationSchema,
-    onSubmit: (values) => {
-      console.log("onSubmit", values);
+    onSubmit: () => {
+      alert("Heureux de vous retrouver !");
     },
   });
 

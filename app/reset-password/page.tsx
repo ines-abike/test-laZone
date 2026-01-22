@@ -29,8 +29,8 @@ const ResetPassword = () => {
       confirmPassword: "",
     },
     validationSchema,
-    onSubmit: (values) => {
-      console.log("onSubmit", values);
+    onSubmit: () => {
+      alert("Votre mot de passe est réinitialisé !");
     },
   });
 
