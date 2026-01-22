@@ -32,7 +32,7 @@ const ResetPassword = () => {
                 </Text>
               </Flex>
 
-              <Box as="form">
+              <form>
                 <Flex direction="column" gap="16px">
                   <CustomInput
                     type="password"
@@ -49,7 +49,7 @@ const ResetPassword = () => {
                     Connexion
                   </Button>
                 </Flex>
-              </Box>
+              </form>
             </Flex>
           </Box>
         </Flex>

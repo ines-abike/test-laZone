@@ -32,7 +32,7 @@ const SignUp = () => {
                 </Text>
               </Flex>
 
-              <form>
+              <Box as="form">
                 <Flex direction="column" gap="16px">
                   <Flex direction="row" gap="16px">
                     <Field.Root>
@@ -67,7 +67,7 @@ const SignUp = () => {
 
                   <Button bg="primary.900">S&apos;enregistrer</Button>
                 </Flex>
-              </form>
+              </Box>
             </Flex>
           </Box>
         </Flex>
