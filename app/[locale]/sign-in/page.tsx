@@ -11,8 +11,11 @@ import {
   Field,
   Link,
 } from "@chakra-ui/react";
+import { useTranslations } from "next-intl";
 
 const SignIn = () => {
+  const t = useTranslations("auth.login");
+
   return (
     <Container maxW="full" p={0}>
       <Grid templateColumns={{ base: "1fr", lg: "2fr 1fr" }} minH="100vh">
@@ -27,38 +30,38 @@ const SignIn = () => {
               />
 
               <Flex direction="column" gap="2px">
-                <Text textStyle="heading.3">Connectez-vous</Text>
+                <Text textStyle="heading.3">{t("title")}</Text>
                 <Text textStyle="text.small" color="gray.700">
-                  Accédez à votre compte
+                  {t("subtitle")}
                 </Text>
               </Flex>
 
               <Box as="form">
                 <Flex direction="column" gap="16px">
                   <Field.Root>
-                    <Field.Label textStyle="text.body">Email</Field.Label>
-                    <CustomInput type="email" placeholder="johndoe@mail.com" />
+                    <Field.Label textStyle="text.body">
+                      {t("email")}
+                    </Field.Label>
+                    <CustomInput type="email" placeholder="JohnDoe@mail.com" />
                   </Field.Root>
 
                   <Field.Root>
                     <Field.Label textStyle="text.body">
-                      Mot de passe
+                      {t("password")}
                     </Field.Label>
-                    <CustomInput
-                      type="password"
-                      placeholder="Votre mot de passe"
-                    />
+                    <CustomInput type="password" placeholder="------" />
                     <Link
                       href="/reset-password"
                       textStyle="text.micro"
                       color="gray.700"
                       mt="4px"
+                      textDecorationStyle="unset"
                     >
-                      Mot de passe oublié ?
+                      {t("forgotPassword")}
                     </Link>
                   </Field.Root>
 
-                  <Button bg="primary.900">Connexion</Button>
+                  <Button bg="primary.900">{t("submitButton")}</Button>
                 </Flex>
               </Box>
             </Flex>

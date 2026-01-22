@@ -1,0 +1,55 @@
+{
+  "auth": {
+    "signup": {
+      "title": "Inscription",
+      "subtitle": "Créez votre compte",
+      "firstName": "Nom",
+      "lastName": "Prénom",
+      "email": "Email",
+      "verification": "8 caractères minimum",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "submitButton": "S'enregistrer"
+    },
+
+    "login": {
+      "title": "Connectez-vous",
+      "subtitle": "Accédez à votre compte",
+      "email": "Email",
+      "password": "Mot de passe",
+      "forgotPassword": "Mot de passe oublié ?",
+      "submitButton": "Connexion"
+    },
+
+    "reset-password": {
+      "title": "Connectez-vous",
+      "subtitle": "Accédez à votre compte",
+      "newPassword": "Nouveau mot de passe",
+      "confirmNewPassword": "Confirmez votre nouveau mot de passe",
+      "submitButton": "Connexion"
+    },
+
+    "validation": {
+      "firstname": {
+        "max": "Doit contenir au maximum 15 caractères",
+        "required": "Champ obligatoire"
+      },
+      "lastname": {
+        "max": "Doit contenir au maximum 20 caractères",
+        "required": "Champ obligatoire"
+      },
+      "email": {
+        "email": "Adresse e-mail invalide",
+        "required": "Champ obligatoire"
+      },
+      "password": {
+        "min": "Doit contenir au moins 8 caractères",
+        "required": "Champ obligatoire"
+      },
+      "confirmPassword": {
+        "oneOf": "Les mots de passe doivent correspondre",
+        "required": "Champ obligatoire"
+      }
+    }
+  }
+}
