@@ -1,7 +1,14 @@
 "use client";
 
 import { Box, Container, Flex, Grid, Image, Text } from "@chakra-ui/react";
+import { Metadata } from "next";
 import Link from "next/link";
+import siteConfig from "../site-config";
+
+export const metadata: Metadata = {
+  title: siteConfig.notFound.title,
+  description: siteConfig.notFound.description,
+};
 
 const NotFound = () => {
   return (
