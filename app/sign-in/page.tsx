@@ -51,11 +51,14 @@ const SignIn = () => {
                     textStyle="text.micro"
                     color="gray.700"
                     mt="4px"
+                    textDecoration="none"
                   >
                     Mot de passe oublié ?
                   </Link>
 
-                  <Button bg="primary.900">Connexion</Button>
+                  <Button variant="primary" colorPalette="primary">
+                    Connexion
+                  </Button>
                 </Flex>
               </Box>
             </Flex>
