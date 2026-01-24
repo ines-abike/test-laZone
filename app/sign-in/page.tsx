@@ -1,5 +1,5 @@
 "use client";
-import CustomInput from "@/components/ui/input/CustomInput";
+import InputField from "@/components/ui/input/InputField";
 import SideDecoration from "@/components/ui/SideDecoration";
 import {
   Box,
@@ -11,8 +11,17 @@ import {
   Button,
   Link,
 } from "@chakra-ui/react";
-import { useFormik } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
+
+const initialValues = {
+  email: "",
+  password: "",
+};
+
+const onSubmit = () => {
+  alert("Heureux de vous retrouver");
+};
 
 const validationSchema = Yup.object({
   email: Yup.string()
@@ -24,17 +33,6 @@ const validationSchema = Yup.object({
 });
 
 const SignIn = () => {
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    validationSchema,
-    onSubmit: () => {
-      alert("Heureux de vous retrouver !");
-    },
-  });
-
   return (
     <Container maxW="full" p={0}>
       <Grid templateColumns={{ base: "1fr", lg: "2fr 1fr" }} minH="100vh">
@@ -55,54 +53,41 @@ const SignIn = () => {
                 </Text>
               </Flex>
 
-              <form onSubmit={formik.handleSubmit}>
-                <Flex direction="column" gap="16px">
-                  <CustomInput
-                    type="email"
-                    placeholder="johndoe@mail.com"
-                    name="email"
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    invalid={!!(formik.errors.email && formik.touched.email)}
-                    error={
-                      formik.touched.email && formik.errors.email
-                        ? formik.errors.email
-                        : ""
-                    }
-                  />
+              <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={onSubmit}
+              >
+                <Form>
+                  <Flex direction="column" gap="16px">
+                    <InputField
+                      label="Email"
+                      type="email"
+                      placeholder="johndoe@mail.com"
+                      name="email"
+                    />
 
-                  <CustomInput
-                    label="Mot de passe"
-                    type="password"
-                    placeholder="Votre mot de passe"
-                    name="password"
-                    value={formik.values.password}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    invalid={
-                      !!(formik.errors.password && formik.touched.password)
-                    }
-                    error={
-                      formik.touched.email && formik.errors.password
-                        ? formik.errors.password
-                        : ""
-                    }
-                  />
-                  <Link
-                    href="/reset-password"
-                    textStyle="text.micro"
-                    color="gray.700"
-                    mt="4px"
-                  >
-                    Mot de passe oublié ?
-                  </Link>
+                    <InputField
+                      label="Mot de passe"
+                      type="password"
+                      placeholder="Votre mot de passe"
+                      name="password"
+                    />
+                    <Link
+                      href="/reset-password"
+                      textStyle="text.micro"
+                      color="gray.700"
+                      mt="4px"
+                    >
+                      Mot de passe oublié ?
+                    </Link>
 
-                  <Button type="submit" bg="primary.900">
-                    Se connecter
-                  </Button>
-                </Flex>
-              </form>
+                    <Button type="submit" bg="primary.900">
+                      Se connecter
+                    </Button>
+                  </Flex>
+                </Form>
+              </Formik>
             </Flex>
           </Box>
         </Flex>

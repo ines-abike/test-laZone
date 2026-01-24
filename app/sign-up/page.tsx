@@ -1,5 +1,5 @@
 "use client";
-import CustomInput from "@/components/ui/input/CustomInput";
+import InputField from "@/components/ui/input/InputField";
 import SideDecoration from "@/components/ui/SideDecoration";
 import {
   Box,
@@ -10,8 +10,20 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
-import { useFormik } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
+
+const initialValues = {
+  lastname: "",
+  firstname: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
+
+const onSubmit = () => {
+  alert("Votre compte a été créer avec succès !");
+};
 
 const validationSchema = Yup.object({
   firstname: Yup.string()
@@ -32,20 +44,6 @@ const validationSchema = Yup.object({
 });
 
 const SignUp = () => {
-  const formik = useFormik({
-    initialValues: {
-      lastname: "",
-      firstname: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    },
-    validationSchema,
-    onSubmit: () => {
-      alert("Votre compte a été créer avec succès !");
-    },
-  });
-
   return (
     <Container maxW="full" p={0}>
       <Grid templateColumns={{ base: "1fr", lg: "2fr 1fr" }} minH="100vh">
@@ -66,107 +64,56 @@ const SignUp = () => {
                 </Text>
               </Flex>
 
-              <form onSubmit={formik.handleSubmit}>
-                <Flex direction="column" gap="16px">
-                  <Flex direction="row" gap="16px">
-                    <CustomInput
-                      name="lastname"
-                      placeholder="Doe"
-                      type="text"
-                      label="Nom"
-                      value={formik.values.lastname}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      invalid={
-                        !!(formik.errors.lastname && formik.touched.lastname)
-                      }
-                      error={
-                        formik.touched.lastname && formik.errors.lastname
-                          ? formik.errors.lastname
-                          : ""
-                      }
+              <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={onSubmit}
+              >
+                <Form>
+                  <Flex direction="column" gap="16px">
+                    <Flex direction="row" gap="16px">
+                      <InputField
+                        name="lastname"
+                        type="text"
+                        label="Nom"
+                        placeholder="Doe"
+                      />
+
+                      <InputField
+                        name="firstname"
+                        type="text"
+                        label="Prénom"
+                        placeholder="John"
+                      />
+                    </Flex>
+
+                    <InputField
+                      name="email"
+                      type="email"
+                      label="Email"
+                      placeholder="johndoe@mail.com"
                     />
 
-                    <CustomInput
-                      name="firstname"
-                      placeholder="John"
-                      type="text"
-                      label="Prénom"
-                      value={formik.values.firstname}
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      invalid={
-                        !!(formik.errors.firstname && formik.touched.firstname)
-                      }
-                      error={
-                        formik.touched.firstname && formik.errors.firstname
-                          ? formik.errors.firstname
-                          : ""
-                      }
+                    <InputField
+                      name="password"
+                      type="password"
+                      label="Mot de passe"
+                      placeholder="------"
+                      helperText="(8 caractères minimum)"
                     />
+
+                    <InputField
+                      name="confirmPassword"
+                      type="password"
+                      label="Répéter le mot de passe"
+                      placeholder="------"
+                    />
+                    <Button type="submit" bg="primary.900">
+                      S&apos;enregistrer
+                    </Button>
                   </Flex>
-                  <CustomInput
-                    name="email"
-                    type="email"
-                    placeholder="johndoe@mail.com"
-                    label="Email"
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    invalid={!!(formik.errors.email && formik.touched.email)}
-                    error={
-                      formik.touched.email && formik.errors.email
-                        ? formik.errors.email
-                        : ""
-                    }
-                  />
-
-                  <CustomInput
-                    name="password"
-                    type="password"
-                    label="Mot de passe"
-                    helperText="(8 caractères minimum)"
-                    placeholder="------"
-                    value={formik.values.password}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    invalid={
-                      !!(formik.errors.password && formik.touched.password)
-                    }
-                    error={
-                      formik.touched.password && formik.errors.password
-                        ? formik.errors.password
-                        : ""
-                    }
-                  />
-
-                  <CustomInput
-                    name="confirmPassword"
-                    type="password"
-                    placeholder="------"
-                    label="Répéter le mot de passe"
-                    value={formik.values.confirmPassword}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    invalid={
-                      !!(
-                        formik.errors.confirmPassword &&
-                        formik.touched.confirmPassword
-                      )
-                    }
-                    error={
-                      formik.touched.confirmPassword &&
-                      formik.errors.confirmPassword
-                        ? formik.errors.confirmPassword
-                        : ""
-                    }
-                  />
-
-                  <Button type="submit" bg="primary.900">
-                    S&apos;enregistrer
-                  </Button>
-                </Flex>
-              </form>
+                </Form>
+              </Formik>
             </Flex>
           </Box>
         </Flex>
