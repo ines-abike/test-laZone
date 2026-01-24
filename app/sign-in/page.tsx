@@ -8,7 +8,6 @@ import {
   Image,
   Text,
   Button,
-  Field,
   Link,
 } from "@chakra-ui/react";
 
@@ -35,28 +34,26 @@ const SignIn = () => {
 
               <Box as="form">
                 <Flex direction="column" gap="16px">
-                  <Field.Root>
-                    <Field.Label textStyle="text.body">Email</Field.Label>
-                    <CustomInput type="email" placeholder="johndoe@mail.com" />
-                  </Field.Root>
+                  <CustomInput
+                    type="email"
+                    placeholder="JohnDoe@mail.com"
+                    label="Email"
+                  />
 
-                  <Field.Root>
-                    <Field.Label textStyle="text.body">
-                      Mot de passe
-                    </Field.Label>
-                    <CustomInput
-                      type="password"
-                      placeholder="Votre mot de passe"
-                    />
-                    <Link
-                      href="/reset-password"
-                      textStyle="text.micro"
-                      color="gray.700"
-                      mt="4px"
-                    >
-                      Mot de passe oublié ?
-                    </Link>
-                  </Field.Root>
+                  <CustomInput
+                    type="password"
+                    placeholder="Votre mot de passe"
+                    label="Mot de passe"
+                  />
+
+                  <Link
+                    href="/reset-password"
+                    textStyle="text.micro"
+                    color="gray.700"
+                    mt="4px"
+                  >
+                    Mot de passe oublié ?
+                  </Link>
 
                   <Button bg="primary.900">Connexion</Button>
                 </Flex>
