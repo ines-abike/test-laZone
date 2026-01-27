@@ -1,4 +1,4 @@
-"use client";
+import { useTranslations } from "next-intl";
 import CustomInput from "@/components/ui/input/CustomInput";
 import SideDecoration from "@/components/ui/SideDecoration";
 import {
@@ -9,10 +9,11 @@ import {
   Image,
   Text,
   Button,
-  Heading,
 } from "@chakra-ui/react";
 
-const ResetPasswordForm = () => {
+const ResetPassword = () => {
+  const t = useTranslations("auth.reset-password");
+
   return (
     <Container maxW="full" p={0}>
       <Grid templateColumns={{ base: "1fr", lg: "2fr 1fr" }} minH="100vh">
@@ -27,9 +28,9 @@ const ResetPasswordForm = () => {
               />
 
               <Flex direction="column" gap="2px">
-                <Heading textStyle="heading.3">Connectez-vous</Heading>
+                <Text textStyle="heading.3">{t("title")}</Text>
                 <Text textStyle="text.small" color="gray.700">
-                  Accédez à votre compte
+                  {t("subtitle")}
                 </Text>
               </Flex>
 
@@ -37,17 +38,17 @@ const ResetPasswordForm = () => {
                 <Flex direction="column" gap="16px">
                   <CustomInput
                     type="password"
-                    label="Nouveau mot de passe"
+                    label={t("newPassword")}
                     textStyle="text.body"
-                    placeholder="------"
+                    placeholder="••••••••"
                   />
                   <CustomInput
                     type="password"
-                    label="Confirmer votre nouveau mot de passe"
-                    placeholder="------"
+                    label={t("confirmNewPassword")}
+                    placeholder="••••••••"
                   />
                   <Button variant="primary" colorPalette="primary">
-                    Connexion
+                    {t("submitButton")}
                   </Button>
                 </Flex>
               </form>
@@ -60,4 +61,4 @@ const ResetPasswordForm = () => {
   );
 };
 
-export default ResetPasswordForm;
+export default ResetPassword;

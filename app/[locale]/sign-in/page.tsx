@@ -1,4 +1,3 @@
-"use client";
 import CustomInput from "@/components/ui/input/CustomInput";
 import SideDecoration from "@/components/ui/SideDecoration";
 import {
@@ -10,13 +9,17 @@ import {
   Text,
   Button,
   Field,
+  Link,
 } from "@chakra-ui/react";
+import { useTranslations } from "next-intl";
 
-const SignUpForm = () => {
+const SignIn = () => {
+  const t = useTranslations("auth.login");
+
   return (
     <Container maxW="full" p={0}>
       <Grid templateColumns={{ base: "1fr", lg: "2fr 1fr" }} minH="100vh">
-        <Flex align="center" justify="center" px="30px" py="80px">
+        <Flex align="center" justify="center" px="30px">
           <Box w="full" maxW="447px">
             <Flex direction="column" gap="24px">
               <Image
@@ -27,46 +30,38 @@ const SignUpForm = () => {
               />
 
               <Flex direction="column" gap="2px">
-                <Text textStyle="heading.3">Inscrivez-vous</Text>
+                <Text textStyle="heading.3">{t("title")}</Text>
                 <Text textStyle="text.small" color="gray.700">
-                  Créez votre compte
+                  {t("subtitle")}
                 </Text>
               </Flex>
 
               <Box as="form">
                 <Flex direction="column" gap="16px">
-                  <Flex direction="row" gap="16px">
-                    <Field.Root>
-                      <Field.Label textStyle="text.body">Nom</Field.Label>
-                      <CustomInput placeholder="Doe" />
-                    </Field.Root>
-
-                    <Field.Root>
-                      <Field.Label textStyle="text.body">Prénom</Field.Label>
-                      <CustomInput placeholder="John" />
-                    </Field.Root>
-                  </Flex>
-
                   <Field.Root>
-                    <Field.Label textStyle="text.body">Email</Field.Label>
-                    <CustomInput type="email" placeholder="johndoe@mail.com" />
+                    <Field.Label textStyle="text.body">
+                      {t("email")}
+                    </Field.Label>
+                    <CustomInput type="email" placeholder="JohnDoe@mail.com" />
                   </Field.Root>
 
                   <Field.Root>
                     <Field.Label textStyle="text.body">
-                      Mot de passe
+                      {t("password")}
                     </Field.Label>
-                    <CustomInput type="password" />
+                    <CustomInput type="password" placeholder="------" />
+                    <Link
+                      href="/reset-password"
+                      textStyle="text.micro"
+                      color="gray.700"
+                      mt="4px"
+                      textDecorationStyle="unset"
+                    >
+                      {t("forgotPassword")}
+                    </Link>
                   </Field.Root>
 
-                  <Field.Root>
-                    <Field.Label textStyle="text.body">
-                      Répéter le mot de passe
-                    </Field.Label>
-                    <CustomInput type="password" />
-                  </Field.Root>
-
-                  <Button bg="primary.900">S&apos;enregistrer</Button>
+                  <Button bg="primary.900">{t("submitButton")}</Button>
                 </Flex>
               </Box>
             </Flex>
@@ -78,4 +73,4 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+export default SignIn;
