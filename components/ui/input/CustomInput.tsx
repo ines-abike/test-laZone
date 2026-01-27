@@ -4,8 +4,11 @@ import type { InputProps } from "@chakra-ui/react";
 
 export interface CustomInputProps extends Omit<InputProps, "disabled"> {
   placeholder?: string;
+  label?: string;
   invalid?: boolean;
   disabled?: boolean;
+  error?: string;
+  helperText?: string;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
