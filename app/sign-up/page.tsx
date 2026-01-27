@@ -8,7 +8,6 @@ import {
   Image,
   Text,
   Button,
-  Field,
 } from "@chakra-ui/react";
 
 const SignUp = () => {
@@ -35,37 +34,32 @@ const SignUp = () => {
               <Box as="form">
                 <Flex direction="column" gap="16px">
                   <Flex direction="row" gap="16px">
-                    <Field.Root>
-                      <Field.Label textStyle="text.body">Nom</Field.Label>
-                      <CustomInput placeholder="Doe" />
-                    </Field.Root>
-
-                    <Field.Root>
-                      <Field.Label textStyle="text.body">Prénom</Field.Label>
-                      <CustomInput placeholder="John" />
-                    </Field.Root>
+                    <CustomInput placeholder="Doe" label="Nom" />
+                    <CustomInput placeholder="John" label="Prenom" />
                   </Flex>
 
-                  <Field.Root>
-                    <Field.Label textStyle="text.body">Email</Field.Label>
-                    <CustomInput type="email" placeholder="johndoe@mail.com" />
-                  </Field.Root>
+                  <CustomInput
+                    type="email"
+                    placeholder="JohnDoe@mail.com"
+                    label="Email"
+                  />
 
-                  <Field.Root>
-                    <Field.Label textStyle="text.body">
-                      Mot de passe
-                    </Field.Label>
-                    <CustomInput type="password" />
-                  </Field.Root>
+                  <CustomInput
+                    type="password"
+                    helperText="(8 caractères minimum)"
+                    placeholder="------"
+                    label="Mot de passe"
+                  />
 
-                  <Field.Root>
-                    <Field.Label textStyle="text.body">
-                      Répéter le mot de passe
-                    </Field.Label>
-                    <CustomInput type="password" />
-                  </Field.Root>
+                  <CustomInput
+                    type="password"
+                    placeholder="------"
+                    label="Répéter le mot de passe"
+                  />
 
-                  <Button bg="primary.900">S&apos;enregistrer</Button>
+                  <Button variant="primary" colorPalette="primary">
+                    S&apos;enregistrer
+                  </Button>
                 </Flex>
               </Box>
             </Flex>

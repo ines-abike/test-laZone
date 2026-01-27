@@ -8,6 +8,7 @@ export interface CustomInputProps extends Omit<InputProps, "disabled"> {
   invalid?: boolean;
   disabled?: boolean;
   error?: string;
+  helperText?: string;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
@@ -16,11 +17,15 @@ const CustomInput: React.FC<CustomInputProps> = ({
   label,
   placeholder,
   error,
+  helperText,
   ...inputProps
 }) => {
   return (
     <Field.Root invalid={invalid}>
       <Field.Label textStyle="text.body">{label}</Field.Label>
+      <Field.HelperText textStyle="text.micro" color="gray.500">
+        {helperText}
+      </Field.HelperText>
       <Input disabled={disabled} {...inputProps} placeholder={placeholder} />
       <Field.ErrorText textStyle="text.micro">{error}</Field.ErrorText>
     </Field.Root>
