@@ -1,5 +1,6 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 import { textStyles } from "./text-styles";
+import { buttonRecipe } from "./recipes/button.recipe";
 import { inputRecipe } from "./recipes/input.recipe";
 
 const config = defineConfig({
@@ -55,6 +56,7 @@ const config = defineConfig({
           contrast: { value: "white" },
           fg: { value: "{colors.primary.900}" },
           muted: { value: "{colors.primary.100}" },
+          subtle: { value: "{colors.primary.100}" },
         },
 
         secondary: {
@@ -62,6 +64,7 @@ const config = defineConfig({
           contrast: { value: "white" },
           fg: { value: "{colors.secondary.900}" },
           muted: { value: "{colors.secondary.100}" },
+          subtle: { value: "{colors.secondary.100}" },
         },
 
         success: {
@@ -69,6 +72,7 @@ const config = defineConfig({
           contrast: { value: "white" },
           fg: { value: "{colors.success.900}" },
           muted: { value: "{colors.success.100}" },
+          subtle: { value: "{colors.success.100}" },
         },
 
         error: {
@@ -76,6 +80,7 @@ const config = defineConfig({
           contrast: { value: "white" },
           fg: { value: "{colors.error.900}" },
           muted: { value: "{colors.error.500}" },
+          subtle: { value: "{colors.error.500}" },
         },
 
         warning: {
@@ -83,8 +88,17 @@ const config = defineConfig({
           contrast: { value: "white" },
           fg: { value: "{colors.warning.100}" },
           muted: { value: "{colors.warning.100}" },
+          subtle: { value: "{colors.warning.100}" },
         },
       },
+    },
+  },
+});
+
+const buttonConfig = defineConfig({
+  theme: {
+    recipes: {
+      button: buttonRecipe,
     },
   },
 });
@@ -97,4 +111,11 @@ const inputConfig = defineConfig({
   },
 });
 
-export const system = createSystem(defaultConfig, config, inputConfig);
+export const system = createSystem(
+  defaultConfig,
+  config,
+  buttonConfig,
+  inputConfig
+);
+
+export default system;
