@@ -28,6 +28,7 @@ const config = defineConfig({
           50: { value: "#FBFBFB" },
           200: { value: "#EBEBEB" },
           500: { value: "#B1B1B1" },
+          700: { value: "#9D9D9D" },
           900: { value: "#7A7A7A" },
         },
 
