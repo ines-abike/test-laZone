@@ -1,5 +1,5 @@
-// components/CustomInput/CustomInput.tsx
 import { Input, Field } from "@chakra-ui/react";
+
 import type { InputProps } from "@chakra-ui/react";
 
 export interface CustomInputProps extends Omit<InputProps, "disabled"> {
@@ -7,7 +7,7 @@ export interface CustomInputProps extends Omit<InputProps, "disabled"> {
   label?: string;
   invalid?: boolean;
   disabled?: boolean;
-  error?: string;
+  error?: string | boolean;
   helperText?: string;
 }
 
