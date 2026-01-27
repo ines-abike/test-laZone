@@ -1,11 +1,12 @@
-import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import type { Preview } from "@storybook/react";
+import { system } from "../theme/index";
 
 const preview: Preview = {
   // ...
   decorators: [
     (Story) => (
-      <ChakraProvider value={defaultSystem}>
+      <ChakraProvider value={system}>
         <Story />
       </ChakraProvider>
     ),

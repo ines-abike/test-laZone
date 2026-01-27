@@ -1,4 +1,4 @@
-import { Box, Button } from "@chakra-ui/react";
+import Test from "@/components/Test";
 
 const Demo = () => {
   return (

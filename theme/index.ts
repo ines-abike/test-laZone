@@ -1,4 +1,6 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
+import { textStyles } from "./text-styles";
+import { inputRecipe } from "./recipes/input.recipe";
 
 const config = defineConfig({
   globalCss: {
@@ -44,15 +46,55 @@ const config = defineConfig({
         },
       },
     },
+    textStyles,
+
     semanticTokens: {
       colors: {
-        brand: {
-          title: { value: "{colors.primary.500}" },
-          subtitle: { value: "{colors.primary.100}" },
+        primary: {
+          solid: { value: "{colors.primary.500}" },
+          contrast: { value: "white" },
+          fg: { value: "{colors.primary.900}" },
+          muted: { value: "{colors.primary.100}" },
+        },
+
+        secondary: {
+          solid: { value: "{colors.secondary.500}" },
+          contrast: { value: "white" },
+          fg: { value: "{colors.secondary.900}" },
+          muted: { value: "{colors.secondary.100}" },
+        },
+
+        success: {
+          solid: { value: "{colors.success.500}" },
+          contrast: { value: "white" },
+          fg: { value: "{colors.success.900}" },
+          muted: { value: "{colors.success.100}" },
+        },
+
+        error: {
+          solid: { value: "{colors.error.500}" },
+          contrast: { value: "white" },
+          fg: { value: "{colors.error.900}" },
+          muted: { value: "{colors.error.500}" },
+        },
+
+        warning: {
+          solid: { value: "{colors.warning.100}" },
+          contrast: { value: "white" },
+          fg: { value: "{colors.warning.100}" },
+          muted: { value: "{colors.warning.100}" },
         },
       },
     },
   },
 });
 
-export const system = createSystem(defaultConfig, config);
+const inputConfig = defineConfig({
+  theme: {
+    recipes: {
+      input: inputRecipe,
+    },
+  },
+});
+
+export const system = createSystem(defaultConfig, config, inputConfig);
