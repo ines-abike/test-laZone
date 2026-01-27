@@ -1,5 +1,6 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 import { textStyles } from "./text-styles";
+import { inputRecipe } from "./recipes/input.recipe";
 
 const config = defineConfig({
   globalCss: {
@@ -53,7 +54,6 @@ const config = defineConfig({
           solid: { value: "{colors.primary.500}" },
           contrast: { value: "white" },
           fg: { value: "{colors.primary.900}" },
-          subtle: { value: "{colors.primary.100}" },
           muted: { value: "{colors.primary.100}" },
         },
 
@@ -61,7 +61,6 @@ const config = defineConfig({
           solid: { value: "{colors.secondary.500}" },
           contrast: { value: "white" },
           fg: { value: "{colors.secondary.900}" },
-          subtle: { value: "{colors.secondary.100}" },
           muted: { value: "{colors.secondary.100}" },
         },
 
@@ -69,7 +68,6 @@ const config = defineConfig({
           solid: { value: "{colors.success.500}" },
           contrast: { value: "white" },
           fg: { value: "{colors.success.900}" },
-          subtle: { value: "{colors.success.100}" },
           muted: { value: "{colors.success.100}" },
         },
 
@@ -77,7 +75,6 @@ const config = defineConfig({
           solid: { value: "{colors.error.500}" },
           contrast: { value: "white" },
           fg: { value: "{colors.error.900}" },
-          subtle: { value: "{colors.error.500}" },
           muted: { value: "{colors.error.500}" },
         },
 
@@ -85,7 +82,6 @@ const config = defineConfig({
           solid: { value: "{colors.warning.100}" },
           contrast: { value: "white" },
           fg: { value: "{colors.warning.100}" },
-          subtle: { value: "white" },
           muted: { value: "{colors.warning.100}" },
         },
       },
@@ -93,4 +89,12 @@ const config = defineConfig({
   },
 });
 
-export const system = createSystem(defaultConfig, config);
+const inputConfig = defineConfig({
+  theme: {
+    recipes: {
+      input: inputRecipe,
+    },
+  },
+});
+
+export const system = createSystem(defaultConfig, config, inputConfig);
