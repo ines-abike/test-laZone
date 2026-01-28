@@ -1,5 +1,4 @@
 "use client";
-import CustomInput from "@/components/ui/input/CustomInput";
 import SideDecoration from "@/components/ui/SideDecoration";
 import {
   Box,
@@ -11,8 +10,29 @@ import {
   Button,
   Heading,
 } from "@chakra-ui/react";
+import InputField from "./ui/input/InputField";
+import * as Yup from "yup";
+import { Form, Formik } from "formik";
 
 const ResetPasswordForm = () => {
+  const initialValues = {
+    email: "",
+    password: "",
+  };
+
+  const validationSchema = Yup.object({
+    email: Yup.string()
+      .email("Adresse e-mail invalide")
+      .required("Champ obligatoire"),
+    password: Yup.string()
+      .min(8, "Doit contenir au moins 8 caractères")
+      .required("Champ obligatoire"),
+  });
+
+  const onSubmit = () => {
+    alert("Mot de passe réinitialiser !");
+  };
+
   return (
     <Container maxW="full" p={0}>
       <Grid templateColumns={{ base: "1fr", lg: "2fr 1fr" }} minH="100vh">
@@ -33,24 +53,31 @@ const ResetPasswordForm = () => {
                 </Text>
               </Flex>
 
-              <form>
-                <Flex direction="column" gap="16px">
-                  <CustomInput
-                    type="password"
-                    label="Nouveau mot de passe"
-                    textStyle="text.body"
-                    placeholder="------"
-                  />
-                  <CustomInput
-                    type="password"
-                    label="Confirmer votre nouveau mot de passe"
-                    placeholder="------"
-                  />
-                  <Button variant="primary" colorPalette="primary">
-                    Connexion
-                  </Button>
-                </Flex>
-              </form>
+              <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={onSubmit}
+              >
+                <Form>
+                  <Flex direction="column" gap="16px">
+                    <InputField
+                      type="password"
+                      label="Nouveau mot de passe"
+                      name="password"
+                      placeholder="------"
+                    />
+                    <InputField
+                      type="password"
+                      label="Confirmer votre nouveau mot de passe"
+                      name="confim-password"
+                      placeholder="------"
+                    />
+                    <Button variant="primary" colorPalette="primary">
+                      Connexion
+                    </Button>
+                  </Flex>
+                </Form>
+              </Formik>
             </Flex>
           </Box>
         </Flex>
