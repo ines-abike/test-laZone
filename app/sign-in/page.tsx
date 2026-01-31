@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import siteConfig from "@/site-config";
-import SignInForm from "@/components/SignInForm";
+import SignInForm from "@/components/forms/sign-in/SignInForm";
 
 export const metadata: Metadata = {
   title: siteConfig.auth.signIn.title,

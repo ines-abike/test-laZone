@@ -122,7 +122,12 @@ const SignUpForm = () => {
                       label="Répéter le mot de passe"
                       placeholder="------"
                     />
-                    <Button type="submit" bg="primary.900" disabled={loading}>
+                    <Button
+                      type="submit"
+                      variant="primary"
+                      colorPalette="primary"
+                      disabled={loading}
+                    >
                       S&apos;enregistrer
                       {loading && <Spinner size="sm" color="white" ml="2" />}
                     </Button>

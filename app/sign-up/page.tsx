@@ -1,4 +1,4 @@
-import SignUpForm from "@/components/SignUpForm";
+import SignUpForm from "@/components/ui/button/sign-up/SignUpForm";
 import siteConfig from "@/site-config";
 import { Metadata } from "next";
 

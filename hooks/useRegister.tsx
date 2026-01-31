@@ -1,5 +1,5 @@
 import { Result, StrapiErrorResponse, StrapiResponse } from "@/types/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface RegisterValues {
   firstname: string;
@@ -10,9 +10,14 @@ interface RegisterValues {
 
 export const useRegister = () => {
   const [loading, setLoading] = useState(false);
-  const [token, setToken] = useState<string | null>(() =>
-    localStorage.getItem("token")
-  );
+  const [token, setToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    const savedToken = localStorage.getItem("token");
+    if (savedToken) {
+      setToken(savedToken);
+    }
+  }, []);
 
   const register = async (values: RegisterValues): Promise<Result> => {
     setLoading(true);
