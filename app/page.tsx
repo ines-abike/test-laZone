@@ -1,17 +1,20 @@
-import Test from "@/components/Test";
+"use client";
 
-const Demo = () => {
+import { Box, Button, Heading, Stack } from "@chakra-ui/react";
+
+export default function Test() {
   return (
-    <div>
-      <Button variant="solid" bg="secondary.500">
-        Solid Button
-      </Button>
-      <Button bg="error.500">Outline Button</Button>
-      <Box color="brand.title" fontSize="2xl">
-        Hello world
-      </Box>
-    </div>
+    <Stack p={8}>
+      <Heading size="md">Buttons</Heading>
+      <Stack direction="row">
+        <Button variant="solid" colorPalette="primary">
+          Solid Button
+        </Button>
+        <Button variant="outline" colorPalette="primary">
+          Outline Button
+        </Button>
+      </Stack>
+      <Box textStyle="heading.huge">Headings</Box>
+    </Stack>
   );
-};
-
-export default Demo;
+}
