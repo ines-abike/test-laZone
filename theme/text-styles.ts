@@ -4,7 +4,6 @@ export const textStyles = defineTextStyles({
   heading: {
     description: "Heading",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "700",
       fontSize: "25px",
       lineHeight: "100%",
@@ -15,7 +14,6 @@ export const textStyles = defineTextStyles({
   huge: {
     description: "Huge",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "700",
       fontSize: "69px",
       lineHeight: "100%",
@@ -26,7 +24,6 @@ export const textStyles = defineTextStyles({
   "heading.1": {
     description: "Heading level 1",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "700",
       fontSize: "53px",
       lineHeight: "120%",
@@ -37,7 +34,6 @@ export const textStyles = defineTextStyles({
   "heading.1.sub": {
     description: "Subheading level 1",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "400",
       fontSize: "53px",
       lineHeight: "120%",
@@ -48,7 +44,6 @@ export const textStyles = defineTextStyles({
   "heading.2": {
     description: "Heading level 2",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "700",
       fontSize: "39px",
       lineHeight: "120%",
@@ -59,7 +54,6 @@ export const textStyles = defineTextStyles({
   "heading.2.sub": {
     description: "Subheading level 2",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "400",
       fontSize: "39px",
       lineHeight: "120%",
@@ -70,7 +64,6 @@ export const textStyles = defineTextStyles({
   "heading.3": {
     description: "Heading level 3",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "700",
       fontSize: "28px",
       lineHeight: "100%",
@@ -81,7 +74,6 @@ export const textStyles = defineTextStyles({
   "heading.3.sub": {
     description: "Subheading level 3",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "400",
       fontSize: "28px",
       lineHeight: "100%",
@@ -92,7 +84,6 @@ export const textStyles = defineTextStyles({
   "heading.4": {
     description: "Heading level 4",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "700",
       fontSize: "22px",
       lineHeight: "100%",
@@ -103,7 +94,6 @@ export const textStyles = defineTextStyles({
   "heading.4.sub": {
     description: "Subheading level 4",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "400",
       fontSize: "22px",
       lineHeight: "100%",
@@ -114,7 +104,6 @@ export const textStyles = defineTextStyles({
   body: {
     description: "Body text",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "700",
       fontSize: "25px",
       lineHeight: "100%",
@@ -125,7 +114,6 @@ export const textStyles = defineTextStyles({
   "text.body": {
     description: "Body text bold",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "400",
       fontSize: "17px",
       lineHeight: "28px",
@@ -136,7 +124,6 @@ export const textStyles = defineTextStyles({
   "text.bold": {
     description: "Small body text",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "700",
       fontSize: "17px",
       lineHeight: "28px",
@@ -147,7 +134,6 @@ export const textStyles = defineTextStyles({
   "text.small": {
     description: "Small body text",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "400",
       fontSize: "14px",
       lineHeight: "150%",
@@ -158,7 +144,6 @@ export const textStyles = defineTextStyles({
   "text.small.bold": {
     description: "small text",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "700",
       fontSize: "14px",
       lineHeight: "150%",
@@ -169,7 +154,6 @@ export const textStyles = defineTextStyles({
   "text.micro": {
     description: "Micro text",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "400",
       fontSize: "12px",
       lineHeight: "150%",
@@ -180,7 +164,6 @@ export const textStyles = defineTextStyles({
   "text.micro.bold": {
     description: "Micro bold text",
     value: {
-      fontFamily: "Roboto",
       fontWeight: "700",
       fontSize: "12px",
       lineHeight: "150%",
