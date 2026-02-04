@@ -1,0 +1,55 @@
+{
+  "auth": {
+    "signup": {
+      "title": "Sign up",
+      "subtitle": "Create your account",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "verification": "8 characters at least",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "submitButton": "Sign up"
+    },
+
+    "login": {
+      "title": "Sign in",
+      "subtitle": "Access your account",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "submitButton": "Sign in"
+    },
+
+    "reset-password": {
+      "title": "Reset your password",
+      "subtitle": "Enter a new password",
+      "newPassword": "New password",
+      "confirmNewPassword": "Confirm new password",
+      "submitButton": "Reset password"
+    },
+
+    "validation": {
+      "firstname": {
+        "max": "Must be at most 15 characters",
+        "required": "Required"
+      },
+      "lastname": {
+        "max": "Must be at most 20 characters",
+        "required": "Required"
+      },
+      "email": {
+        "email": "Invalid email address",
+        "required": "Required"
+      },
+      "password": {
+        "min": "Must be at least 8 characters",
+        "required": "Required"
+      },
+      "confirmPassword": {
+        "oneOf": "Passwords must match",
+        "required": "Required"
+      }
+    }
+  }
+}

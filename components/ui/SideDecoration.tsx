@@ -1,4 +1,5 @@
 import { Box, Image } from "@chakra-ui/react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const SideDecoration = () => {
   return (
@@ -7,6 +8,7 @@ const SideDecoration = () => {
       bg="primary.900"
       position="relative"
     >
+      <LanguageSwitcher />
       <Image
         position="absolute"
         right="0"

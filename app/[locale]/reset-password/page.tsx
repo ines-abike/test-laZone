@@ -1,5 +1,5 @@
-"use client";
-import InputField from "@/components/ui/input/InputField";
+import { useTranslations } from "next-intl";
+import CustomInput from "@/components/ui/input/CustomInput";
 import SideDecoration from "@/components/ui/SideDecoration";
 import {
   Box,
@@ -9,7 +9,6 @@ import {
   Image,
   Text,
   Button,
-  Heading,
 } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
@@ -33,6 +32,8 @@ const validationSchema = Yup.object({
 });
 
 const ResetPassword = () => {
+  const t = useTranslations("auth.reset-password");
+
   return (
     <Container maxW="full" p={0}>
       <Grid templateColumns={{ base: "1fr", lg: "2fr 1fr" }} minH="100vh">
@@ -47,41 +48,30 @@ const ResetPassword = () => {
               />
 
               <Flex direction="column" gap="2px">
-                <Heading textStyle="heading.3">Connectez-vous</Heading>
+                <Text textStyle="heading.3">{t("title")}</Text>
                 <Text textStyle="text.small" color="gray.700">
-                  Accédez à votre compte
+                  {t("subtitle")}
                 </Text>
               </Flex>
 
-              <Formik
-                initialValues={initialValues}
-                validationSchema={validationSchema}
-                onSubmit={onSubmit}
-              >
-                <Form>
-                  <Flex direction="column" gap="16px">
-                    <InputField
-                      type="password"
-                      label="Nouveau mot de passe"
-                      placeholder="------"
-                      name="password"
-                    />
-                    <InputField
-                      name="confirmPassword"
-                      type="password"
-                      label="Confirmer votre nouveau mot de passe"
-                      placeholder="------"
-                    />
-                    <Button
-                      variant="primary"
-                      colorPalette="primary"
-                      type="submit"
-                    >
-                      Connexion
-                    </Button>
-                  </Flex>
-                </Form>
-              </Formik>
+              <form>
+                <Flex direction="column" gap="16px">
+                  <CustomInput
+                    type="password"
+                    label={t("newPassword")}
+                    textStyle="text.body"
+                    placeholder="••••••••"
+                  />
+                  <CustomInput
+                    type="password"
+                    label={t("confirmNewPassword")}
+                    placeholder="••••••••"
+                  />
+                  <Button variant="primary" colorPalette="primary">
+                    {t("submitButton")}
+                  </Button>
+                </Flex>
+              </form>
             </Flex>
           </Box>
         </Flex>
