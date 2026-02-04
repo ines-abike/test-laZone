@@ -9,7 +9,8 @@
       "verification": "8 caractères minimum",
       "password": "Mot de passe",
       "confirmPassword": "Confirmer le mot de passe",
-      "submitButton": "S'enregistrer"
+      "submitButton": "S'enregistrer",
+      "sucessMessage": "Votre compte a été créé avec succès !"
     },
 
     "login": {
@@ -18,7 +19,8 @@
       "email": "Email",
       "password": "Mot de passe",
       "forgotPassword": "Mot de passe oublié ?",
-      "submitButton": "Connexion"
+      "submitButton": "Connexion",
+      "sucessMessage": "Vous avez été connecté avec succès !"
     },
 
     "reset-password": {
@@ -26,7 +28,8 @@
       "subtitle": "Accédez à votre compte",
       "newPassword": "Nouveau mot de passe",
       "confirmNewPassword": "Confirmez votre nouveau mot de passe",
-      "submitButton": "Connexion"
+      "submitButton": "Connexion",
+      "sucessMessage": "Votre mot de passe a été réinitialisé avec succès !"
     },
 
     "validation": {

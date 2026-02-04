@@ -9,7 +9,8 @@
       "verification": "8 characters at least",
       "password": "Password",
       "confirmPassword": "Confirm password",
-      "submitButton": "Sign up"
+      "submitButton": "Sign up",
+      "sucessMessage": "Your account has been created successfully!"
     },
 
     "login": {
@@ -18,7 +19,8 @@
       "email": "Email",
       "password": "Password",
       "forgotPassword": "Forgot password?",
-      "submitButton": "Sign in"
+      "submitButton": "Sign in",
+      "sucessMessage": "You have been signed in successfully!"
     },
 
     "reset-password": {
@@ -26,7 +28,8 @@
       "subtitle": "Enter a new password",
       "newPassword": "New password",
       "confirmNewPassword": "Confirm new password",
-      "submitButton": "Reset password"
+      "submitButton": "Reset password",
+      "sucessMessage": "Your password has been reset successfully!"
     },
 
     "validation": {
