@@ -1,24 +1,34 @@
-// components/CustomInput/CustomInput.stories.tsx
-import type { Meta, StoryObj } from "@storybook/react";
-import CustomInput from "./CustomInput";
+import type { Meta, StoryObj, Decorator } from "@storybook/react";
+import { Formik, Form } from "formik";
+import InputField from "./InputField";
 
-const meta: Meta<typeof CustomInput> = {
-  title: "UI/CustomInput",
-  component: CustomInput,
+const formikDecorator: Decorator = (Story) => (
+  <Formik initialValues={{ email: "" }} onSubmit={() => {}}>
+    <Form>
+      <Story />
+    </Form>
+  </Formik>
+);
+
+const meta: Meta<typeof InputField> = {
+  title: "UI/InputField",
+  component: InputField,
   tags: ["autodocs"],
   argTypes: {
     disabled: { control: "boolean" },
-    invalid: { control: "boolean" },
   },
+  decorators: [formikDecorator],
 };
 
 export default meta;
-type Story = StoryObj<typeof CustomInput>;
+
+type Story = StoryObj<typeof InputField>;
 
 export const Playground: Story = {
   args: {
+    name: "email",
+    label: "Email",
     placeholder: "email@example.com",
     disabled: false,
-    invalid: false,
   },
 };

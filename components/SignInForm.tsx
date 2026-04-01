@@ -94,7 +94,12 @@ const SignInForm = () => {
                       Mot de passe oublié ?
                     </Link>
 
-                    <Button type="submit" bg="primary.900" disabled={loading}>
+                    <Button
+                      type="submit"
+                      variant="primary"
+                      colorPalette="primary"
+                      disabled={loading}
+                    >
                       Se connecter
                       {loading && <Spinner size="sm" color="white" ml="2" />}
                     </Button>
